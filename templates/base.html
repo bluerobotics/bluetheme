@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title> BlueOS Documentation</title>
+    <link href="/output.css" rel="stylesheet">
+</head>
+
+<body class="antialiased h-[calc(100vh-65px)]">
+<header>
+    {% include "navbar.html" %}
+</header>
+
+<div class="container mx-auto mt-14">
+    {% block sidebar %}{% endblock %}
+    <div class="flex">
+        <div class="w-96 flex-none border-gray-200 h-[calc(100vh-65px)] pt-8">
+
+        </div>
+        <div class="grow p-8 border-s-2">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="w-80 flex-none pt-8">
+            <div class="fixed">
+                <h1 class="text-xl uppercase font-mono font-bold text-gray-800">On this page</h1>
+                {% if page.toc %}
+                <ul>
+                    {% for h1 in page.toc %}
+                    <li class="border-b border-gray-200 border-dashed p-2">
+                        <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                        {% if h1.children %}
+                        <ul>
+                            {% for h2 in h1.children %}
+                            <li class="border-b border-gray-200 border-dashed p-2">
+                                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
+</body>
+</html>
