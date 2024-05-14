@@ -63,4 +63,8 @@
     .markdown thead th {
         @apply pb-3;
     }
+
+    .simple-button {
+        @apply block bg-gray-200 p-3 rounded-2xl border-2 border-gray-300 text-black font-medium mx-auto
+    }
 }
