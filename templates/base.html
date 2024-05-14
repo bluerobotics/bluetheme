@@ -12,17 +12,16 @@
     {% include "navbar.html" %}
 </header>
 
-<div class="container mx-auto mt-14">
-    {% block sidebar %}{% endblock %}
+<div class="2xl:container 2xl:mx-auto mt-14">
     <div class="flex">
-        <div class="w-96 flex-none border-gray-200 h-[calc(100vh-65px)] pt-8">
-
+        <div class="w-80 flex-none border-gray-200 h-[calc(100vh-65px)] pt-8 overflow-auto">
+            {% block sidebar %}{% endblock %}
         </div>
-        <div class="grow p-8 border-s-2">
+        <div class="grow p-8 border-s-2 h-[calc(100vh-65px)] overflow-auto">
             {% block content %}{% endblock %}
         </div>
-        <div class="w-80 flex-none pt-8">
-            <div class="fixed">
+        <div class="w-80 flex-none pt-8 h-[calc(100vh-65px)] overflow-auto hidden xl:block">
+            <div class="">
                 <h1 class="text-xl uppercase font-mono font-bold text-gray-800">On this page</h1>
                 {% if page.toc %}
                 <ul>
