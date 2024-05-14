@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title> BlueOS Documentation</title>
     <link href="/output.css" rel="stylesheet">
 </head>
@@ -14,13 +14,13 @@
 
 <div class="2xl:container 2xl:mx-auto mt-14">
     <div class="flex">
-        <div class="w-80 flex-none border-gray-200 h-[calc(100vh-65px)] pt-8 overflow-auto">
+        <div class="w-80 flex-none p-4 border-gray-200 h-[calc(100vh-65px)]  overflow-auto overflow-y-hidden hover:overflow-y-scroll">
             {% block sidebar %}{% endblock %}
         </div>
         <div class="grow p-8 border-s-2 h-[calc(100vh-65px)] overflow-auto">
             {% block content %}{% endblock %}
         </div>
-        <div class="w-80 flex-none pt-8 h-[calc(100vh-65px)] overflow-auto hidden xl:block">
+        <div class="w-80 flex-none p-4 h-[calc(100vh-65px)] overflow-auto overflow-y-hidden hover:overflow-y-scroll hidden xl:block">
             <div class="">
                 <h1 class="text-xl uppercase font-mono font-bold text-gray-800">On this page</h1>
                 {% if page.toc %}
