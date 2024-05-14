@@ -24,7 +24,7 @@
                 {% for _page in level_1.pages %}
                     <li class="my-1">
                         <a href="{{ _page.permalink }}"
-                           class="block ms-3 font-medium {% if _page == page %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
+                           class="block ms-3 font-medium {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
                     </li>
                 {% endfor %}
             </ul>
@@ -37,7 +37,7 @@
                     {% for _page in level_2.pages %}
                         <li class="my-1">
                             <a href="{{ _page.permalink }}"
-                               class="block ms-6 {% if _page == page %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
+                               class="block ms-6 {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -51,7 +51,7 @@
                         {% for _page in level_3.pages %}
                             <li class="my-1">
                                 <a href="{{ _page.permalink }}"
-                                   class="block ms-9 font-medium {% if _page == page %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
+                                   class="block ms-9 font-medium {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
                             </li>
                         {% endfor %}
                     </ul>
