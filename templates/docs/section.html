@@ -16,7 +16,7 @@
         </form>
 
         <h5 class="font-bold">BlueOS Documentation</h5>
-        {% set root_section = get_section(path="v1.1.1/_index.md") %}
+        {% set root_section = get_section(path="_index.md") %}
         {#  Level 1 #}
         {% for _level_1 in root_section.subsections %}
             {% set level_1 = get_section(path=_level_1) %}
