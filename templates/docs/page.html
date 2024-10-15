@@ -18,14 +18,14 @@
         <h5 class="font-bold">BlueOS Documentation</h5>
         {% set root_section = get_section(path="_index.md") %}
 
-        {% for page in root_section.pages %}
-            <a href="{{ page.permalink }}" class="block ms-0 text-orange-600 font-bold">{{ page.title }}</a>
+        {% for _page in root_section.pages %}
+            <a href="{{ _page.permalink }}" class="block ms-1 {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
         {% endfor %}
 
         {#  Level 1 #}
         {% for _level_1 in root_section.subsections %}
             {% set level_1 = get_section(path=_level_1) %}
-            <a href="{{ level_1.permalink }}" class="block ms-0 text-orange-600 font-bold">{{ level_1.title }}</a>
+            <span class="block ms-0 text-orange-600 font-bold">{{ level_1.title }}</span>
             <ul>
                 {% for _page in level_1.pages %}
                     <li class="my-1">
@@ -38,7 +38,7 @@
             {#  Level 2 #}
             {% for _level_2 in level_1.subsections %}
                 {% set level_2 = get_section(path=_level_2) %}
-                <a href="{{ level_2.permalink }}" class="block ms-3 text-orange-600 font-bold">{{ level_2.title }}</a>
+                <span class="block ms-3 text-orange-600 font-bold">{{ level_2.title }}</span>
                 <ul>
                     {% for _page in level_2.pages %}
                         <li class="my-1">
@@ -51,8 +51,7 @@
                 {# Level 3 #}
                 {% for _level_3 in level_2.subsections %}
                     {% set level_3 = get_section(path=_level_3) %}
-                    <a href="{{ level_3.permalink }}"
-                       class="block ms-6 text-orange-600 font-bold">{{ level_3.title }}</a>
+                    <span class="block ms-6 text-orange-600 font-bold">{{ level_3.title }}</span>
                     <ul>
                         {% for _page in level_3.pages %}
                             <li class="my-1">
