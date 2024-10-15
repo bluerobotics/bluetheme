@@ -14,8 +14,14 @@
                 <option value="DE">1.0.0</option>
             </select>
         </form>
+
         <h5 class="font-bold">BlueOS Documentation</h5>
         {% set root_section = get_section(path="_index.md") %}
+
+        {% for page in root_section.pages %}
+            <a href="{{ page.permalink }}" class="block ms-0 text-orange-600 font-bold">{{ page.title }}</a>
+        {% endfor %}
+
         {#  Level 1 #}
         {% for _level_1 in root_section.subsections %}
             {% set level_1 = get_section(path=_level_1) %}

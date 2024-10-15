@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block sidebar %}
-    <div class="">
+    <div>
         <form class="max-w-sm mx-auto mb-3">
             <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a
                 version</label>
@@ -17,6 +17,11 @@
 
         <h5 class="font-bold">BlueOS Documentation</h5>
         {% set root_section = get_section(path="_index.md") %}
+
+        {% for page in root_section.pages %}
+            <a href="{{ page.permalink }}" class="block ms-0 text-orange-600 font-bold">{{ page.title }}</a>
+        {% endfor %}
+
         {#  Level 1 #}
         {% for _level_1 in root_section.subsections %}
             {% set level_1 = get_section(path=_level_1) %}
