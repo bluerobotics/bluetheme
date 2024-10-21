@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "flowbite": "^2.3.0",
+    "flowbite-typography": "^1.0.4",
     "tailwindcss": "^3.4.3"
   }
 }

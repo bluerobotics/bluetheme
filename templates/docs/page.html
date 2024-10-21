@@ -3,7 +3,7 @@
 {% block sidebar %}
     <div>
         <form class="max-w-sm mx-auto mb-3">
-            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a
+            <label for="countries" class="block mb-2 text-sm font-normal text-gray-900 dark:text-white">Select a
                 version</label>
             <select id="countries"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -25,12 +25,12 @@
         {#  Level 1 #}
         {% for _level_1 in root_section.subsections %}
             {% set level_1 = get_section(path=_level_1) %}
-            <span class="block ms-0 text-orange-600 font-bold">{{ level_1.title }}</span>
+            <span class="mt-2 block ms-0 text-orange-600 font-normal">{{ level_1.title }}</span>
             <ul>
                 {% for _page in level_1.pages %}
                     <li class="my-1">
                         <a href="{{ _page.permalink }}"
-                           class="block ms-3 font-medium {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
+                           class="block ms-3 font-normal {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
                     </li>
                 {% endfor %}
             </ul>
@@ -38,7 +38,7 @@
             {#  Level 2 #}
             {% for _level_2 in level_1.subsections %}
                 {% set level_2 = get_section(path=_level_2) %}
-                <span class="block ms-3 text-orange-600 font-bold">{{ level_2.title }}</span>
+                <span class="block mt-2 ms-3 text-orange-600 font-normal">{{ level_2.title }}</span>
                 <ul>
                     {% for _page in level_2.pages %}
                         <li class="my-1">
@@ -51,12 +51,12 @@
                 {# Level 3 #}
                 {% for _level_3 in level_2.subsections %}
                     {% set level_3 = get_section(path=_level_3) %}
-                    <span class="block ms-6 text-orange-600 font-bold">{{ level_3.title }}</span>
+                    <span class="block mt-2 ms-6 text-orange-600 font-normal">{{ level_3.title }}</span>
                     <ul>
                         {% for _page in level_3.pages %}
                             <li class="my-1">
                                 <a href="{{ _page.permalink }}"
-                                   class="block ms-9 font-medium {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
+                                   class="block ms-9 font-normal {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -69,7 +69,7 @@
 {% block content %}
     <div class="markdown">
         <h1>{{ page.title }}</h1>
-        {% if page.extra.lead %}<span class="font-medium text-xl py-2">{{ page.extra.lead | safe }}</span>{% endif %}
+        {% if page.extra.lead %}<span class="font-normal text-xl py-2">{{ page.extra.lead | safe }}</span>{% endif %}
         {{ page.content | safe }}
     </div>
 {% endblock content %}

@@ -4,15 +4,15 @@
 
 @layer components {
     .markdown h1 {
-        @apply text-4xl py-4 font-black
+        @apply text-4xl py-4 font-black text-orange-600
     }
 
     .markdown h2 {
-        @apply text-3xl py-4 font-black
+        @apply text-3xl py-4 font-black text-orange-600
     }
 
     .markdown h3 {
-        @apply text-2xl py-2 font-black
+        @apply text-2xl py-2 font-black text-orange-600
     }
 
     .markdown h4 {
@@ -31,12 +31,17 @@
         @apply list-decimal list-inside ms-3
     }
 
+    /* Ordered elements sometimes have a paragraph and even images inside it, need to change the display to inline */
+    .markdown ol p{
+        @apply inline
+    }
+
     .markdown b {
         @apply font-bold
     }
 
     .markdown a {
-        @apply text-orange-600 underline hover:no-underline
+        @apply text-blue-500 underline hover:no-underline
     }
 
     .markdown li ul {
