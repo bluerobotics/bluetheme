@@ -36,6 +36,16 @@
         @apply inline
     }
 
+    /* Footnote element followed by a paragraph need to to change the display to inline. */
+    .markdown .footnote-definition  p{
+        @apply inline bg-gray-50 text-xs text-gray-500 ms-2
+    }
+
+    /* Style Alerts/Blockquote */
+    .markdown blockquote {
+        @apply bg-gray-100 p-3 rounded-lg my-2
+    }
+
     .markdown b {
         @apply font-bold
     }

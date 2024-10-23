@@ -1689,6 +1689,30 @@ input:checked + .toggle-bg {
   display: inline;
 }
 
+/* Footnote element followed by a paragraph need to to change the display to inline. */
+
+.markdown .footnote-definition  p {
+  margin-inline-start: 0.5rem;
+  display: inline;
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+/* Style Alerts/Blockquote */
+
+.markdown blockquote {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  padding: 0.75rem;
+}
+
 .markdown b {
   font-weight: 700;
 }
