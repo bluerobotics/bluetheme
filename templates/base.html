@@ -32,7 +32,17 @@
                         <ul>
                             {% for h2 in h1.children %}
                             <li class="{% if loop.last == false %} border-b border-gray-200 border-dashed {% endif %} p-1 ms-3">
-                                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a> {{loop.last }}
+                                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                {% if h2.children %}
+                                <ul>
+                                    {% for h3 in h2.children %}
+                                    <li class="{% if loop.last == false %} border-b border-gray-200 border-dashed {% endif %} p-1 ms-3">
+                                        <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+
                             </li>
                             {% endfor %}
                         </ul>
