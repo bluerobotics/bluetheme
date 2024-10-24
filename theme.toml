@@ -7,6 +7,17 @@ min_version = "0.4.0"
 # An optional live demo URL
 demo = ""
 
+# The default language; used in feeds and search index
+default_language = "en"
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+[search]
+include_title = true
+include_description = false
+include_content = true
+
 # Any variable there can be overridden in the end user `config.toml`
 # You don't need to prefix variables by the theme name but as this will
 # be merged with user data, some kind of prefix or nesting is preferable
