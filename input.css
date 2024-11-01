@@ -4,15 +4,15 @@
 
 @layer components {
     .markdown h1 {
-        @apply text-4xl py-4 font-black text-orange-600
+        @apply text-4xl py-4 font-black text-green-kelp
     }
 
     .markdown h2 {
-        @apply text-3xl py-4 font-black text-orange-600
+        @apply text-3xl py-4 font-black text-green-kelp
     }
 
     .markdown h3 {
-        @apply text-2xl py-2 font-black text-orange-600
+        @apply text-2xl py-2 font-black text-green-kelp
     }
 
     .markdown h4 {
@@ -51,7 +51,7 @@
     }
 
     .markdown a {
-        @apply text-blue-500 underline hover:no-underline
+        @apply text-blue-mariner underline hover:no-underline
     }
 
     .markdown li ul {
