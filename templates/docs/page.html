@@ -2,12 +2,15 @@
 
 {% block sidebar %}
     <div>
-        <!-- Modal toggle -->
+        <!-- Use button to initialize modal, but keep the button hidden -->
         <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button">
             Search
         </button>
+
+        <!-- Use input to toggle modal -->
+        <input type="text" onclick="searchOnClick()">
 
         <!-- Main modal -->
         <div id="default-modal" tabindex="-1" aria-hidden="true"

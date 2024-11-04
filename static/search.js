@@ -315,3 +315,11 @@ function getByteByBinary(binaryCode) {
 function getByteByHex(hexCode) {
   return getByteByBinary(parseInt(hexCode, 16).toString(2));
 }
+
+function searchOnClick(){
+    userinput.value = "";
+    suggestions.innerHTML = "";
+    var modal = window.FlowbiteInstances.getInstance('Modal', 'default-modal')
+    modal.show()
+    userinput.focus()
+}
