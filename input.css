@@ -83,6 +83,15 @@
         @apply block bg-gray-200 p-3 rounded-2xl border-2 border-gray-300 text-black font-medium mx-auto
     }
 
+    /* style the search modal content */
+    .search_section {
+        @apply text-blue-mariner block
+    }
+
+    .search_description {
+        @apply block mb-3 text-sm text-gray-600
+    }
+
     /* width */
     ::-webkit-scrollbar {
         width: 6px;

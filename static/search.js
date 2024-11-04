@@ -92,7 +92,7 @@ Source:
       if (page.doc.body !== '') {
         entry = document.createElement('div');
 
-        entry.innerHTML = '<a href><span></span><span></span></a>';
+        entry.innerHTML = '<a href><span class="search_section"></span><span class="search_description"></span></a>';
   
         a = entry.querySelector('a'),
         t = entry.querySelector('span:first-child'),
