@@ -79,8 +79,8 @@
         @apply pb-3;
     }
 
-    .simple-button {
-        @apply block bg-gray-200 p-3 rounded-2xl border-2 border-gray-300 text-black font-medium mx-auto
+    .markdown button {
+        @apply block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-auto
     }
 
     /* style the search modal content */
@@ -94,22 +94,22 @@
 
     /* width */
     ::-webkit-scrollbar {
-        width: 6px;
+        width: 5px;
     }
 
     /* Track */
     ::-webkit-scrollbar-track {
-        background: #f1f1f1;
+        background: #ffffff;
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
         background: #b6b5b5;
-        border-radius: 5px;
+        /* border-radius: 5px; */
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        background: #555;
+        background: #b6b5b5;
     }
 }
