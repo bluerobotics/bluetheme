@@ -71,6 +71,7 @@
         localStorage.getItem('theme') === 'dark'
         || !localStorage.getItem('theme') && window.matchMedia("(prefers-color-scheme: dark)").matches
     );
+    darkMode = false; // disable darkmode for now
 
     mermaid.initialize(
         {
