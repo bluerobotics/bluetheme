@@ -1654,6 +1654,16 @@ input:checked + .toggle-bg {
   color: rgb(79 164 131 / var(--tw-text-opacity));
 }
 
+.markdown h3 > a {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 900;
+  --tw-text-opacity: 1;
+  color: rgb(79 164 131 / var(--tw-text-opacity));
+}
+
 .markdown h4 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;

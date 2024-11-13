@@ -15,6 +15,10 @@
         @apply text-2xl py-2 font-black text-green-kelp
     }
 
+    .markdown h3 > a{
+        @apply text-2xl py-2 font-black text-green-kelp
+    }
+
     .markdown h4 {
         @apply text-xl py-2 font-black
     }
