@@ -63,9 +63,12 @@
     }
 
     .markdown code {
-        @apply text-green-kelp ms-2 me-2 font-mono text-sm
+        @apply text-green-kelp ms-1 me-1 font-mono text-sm bg-gray-50
     }
 
+    .markdown pre > code {
+        @apply text-gray-500 ms-1 me-1 font-mono text-sm bg-transparent
+    }
     /** Table **/
     .markdown tbody tr {
         @apply border-b-2 border-gray-100 align-text-top;
