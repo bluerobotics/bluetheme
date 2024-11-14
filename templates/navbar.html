@@ -15,47 +15,24 @@
                     <div class="hidden w-full md:block md:w-auto me-10" id="navbar-dropdown">
                         <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 text-white">
                             <li>
-                                <button id="about_dropdownNavbarLink"
-                                        data-dropdown-toggle="about_dropdownNavbar"
+                                <button id="mega-menu-about"
+                                        data-dropdown-toggle="mega-menu-about-content"
+                                        data-dropdown-trigger="hover"
+                                        data-dropdown-delay="100"
                                         class="flex items-center justify-between w-full py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto">
                                     About
-                                    <svg class="w-2.5 h-2.5 ms-2.5"
-                                         aria-hidden="true"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         fill="none"
-                                         viewBox="0 0 10 6">
+                                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                         fill="none" viewBox="0 0 10 6">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                               stroke-width="2" d="m1 1 4 4 4-4"/>
                                     </svg>
                                 </button>
-                                <!-- Dropdown menu -->
-                                <div id="about_dropdownNavbar"
-                                     class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
-                                        aria-labelledby="dropdownLargeButton">
-                                        <li>
-                                            <a href="#"
-                                               class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">BlueOS</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                               class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Open Source License</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                               class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sponsorship</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                               class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">About Bluerobotics</a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </li>
                             <li>
                                 <button id="mega-menu-full-cta-image-button"
                                         data-dropdown-toggle="mega-menu-full-image-dropdown"
                                         data-dropdown-trigger="hover"
+                                        data-dropdown-delay="100"
                                         class="flex items-center justify-between w-full py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto">
                                     Docs
                                     <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -124,6 +101,62 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- About Megamenu content -->
+    <!-- -->
+    <div id="mega-menu-about-content"
+         class="hidden relative z-50 w-full megamenu">
+        <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-white dark:text-gray-400 md:grid-cols-4 md:px-6 z-50">
+            <ul class="hidden mb-4 space-y-2 md:mb-0 md:block" aria-labelledby="mega-menu-full-image-button">
+                <li>
+                    <a href="#" class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
+                        Autopilots
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        BlueOS
+                    </a>
+                </li>
+            </ul>
+            <ul class="mb-4 space-y-2 md:mb-0">
+                <li>
+                    <a href="#" class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
+                        Extensions
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        Open Source License
+                    </a>
+                </li>
+            </ul>
+            <ul class="mb-4 space-y-2 md:mb-0">
+                <li>
+                    <a href="/extensions" class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
+                        Developer
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        Sponsorship
+                    </a>
+                </li>
+            </ul>
+            <ul class="mb-4 space-y-2 md:mb-0">
+                <li>
+                    <a href="#" class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
+                        Vehicles
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        About BlueRobotics
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 
