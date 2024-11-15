@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .markdown h1 {
+        @apply text-4xl py-4 font-black text-green-kelp
+    }
+
+    .markdown h2 {
+        @apply text-3xl py-4 font-black text-green-kelp
+    }
+
+    .markdown h3 {
+        @apply text-2xl py-2 font-black text-green-kelp
+    }
+
+    .markdown h3 > a{
+        @apply text-2xl py-2 font-black text-green-kelp
+    }
+
+    .markdown h4 {
+        @apply text-xl py-2 font-black
+    }
+
+    .markdown p {
+        @apply py-2 text-lg
+    }
+
+    .markdown ul {
+        @apply list-disc list-inside text-lg ms-3
+    }
+
+    .markdown ol {
+        @apply list-decimal list-inside ms-3
+    }
+
+    /* Ordered elements sometimes have a paragraph and even images inside it, need to change the display to inline */
+    .markdown ol p{
+        @apply inline
+    }
+
+    /* Footnote element followed by a paragraph need to to change the display to inline. */
+    .markdown .footnote-definition  p{
+        @apply inline bg-gray-50 text-xs text-gray-500 ms-2
+    }
+
+    /* Style Alerts/Blockquote */
+    .markdown blockquote {
+        @apply bg-gray-100 p-3 rounded-lg my-2
+    }
+
+    .markdown b {
+        @apply font-bold
+    }
+
+    .markdown a {
+        @apply text-blue-mariner underline hover:no-underline
+    }
+
+    .markdown li ul {
+        @apply list-disc list-inside text-lg ms-6
+    }
+
+    .markdown img {
+        @apply mx-auto;
+    }
+
+    .markdown code {
+        @apply text-green-kelp ms-1 me-1 font-mono text-sm bg-gray-50
+    }
+
+    .markdown pre > code {
+        @apply text-gray-500 ms-1 me-1 font-mono text-sm bg-transparent
+    }
+    /** Table **/
+    .markdown tbody tr {
+        @apply border-b-2 border-gray-100 align-text-top;
+    }
+
+    .markdown thead tr {
+        @apply border-b-2 border-gray-700;
+    }
+
+    .markdown thead th {
+        @apply pb-3;
+    }
+
+    .markdown button {
+        @apply block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-auto
+    }
+
+    /* megamenu customization */
+
+    .megamenu {
+        background: rgba(1, 47, 70, 0.99);
+    }
+    /* style the search modal content */
+    .search_section {
+        @apply text-blue-mariner block
+    }
+
+    .search_description {
+        @apply block mb-3 text-sm text-gray-600
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #ffffff;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #b6b5b5;
+        /* border-radius: 5px; */
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #b6b5b5;
+    }
+}

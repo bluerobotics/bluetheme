@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title> BlueOS Documentation</title>
+    <link href="{{ config.base_url | safe }}/output.css" rel="stylesheet">
+</head>
+
+<body class="antialiased h-[calc(100vh-65px)]">
+<header>
+    {% include "navbar.html" %}
+</header>
+
+<div class="2xl:container 2xl:mx-auto mt-14">
+    <div class="flex">
+        <div class="w-80 flex-none p-6 border-gray-200 h-[calc(100vh-65px)] overflow-auto __overflow-y-hidden hover:overflow-y-scroll">
+            {% block sidebar %}{% endblock %}
+        </div>
+        <div class="grow p-8 border-s-2 h-[calc(100vh-65px)] overflow-auto">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="w-80 flex-none p-4 h-[calc(100vh-65px)] overflow-auto __overflow-y-hidden __hover:overflow-y-scroll hidden xl:block">
+            <div class="">
+                {% include "version_selector.html" %}
+                <h1 class="text-xl font-sans my-3 font-bold text-gray-800">On this page</h1>
+                {% if page.toc %}
+                <ul>
+                    {% for h1 in page.toc %}
+                    <li class="border-b border-gray-200 border-dashed p-1">
+                        <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                        {% if h1.children %}
+                        <ul>
+                            {% for h2 in h1.children %}
+                            <li class="{% if loop.last == false %} border-b border-gray-200 border-dashed {% endif %} p-1 ms-3">
+                                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                {% if h2.children %}
+                                <ul>
+                                    {% for h3 in h2.children %}
+                                    <li class="{% if loop.last == false %} border-b border-gray-200 border-dashed {% endif %} p-1 ms-3">
+                                        <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<script type="text/javascript" src="{{ config.base_url | safe }}/elasticlunr.min.js" defer></script>
+<script type="text/javascript" src="{{ config.base_url | safe }}/search_index.en.js" defer></script>
+<script type="text/javascript" src="{{ config.base_url | safe }}/search.js" defer></script>
+
+
+<!-- when this javascript is loaded and initialized it will look for divs with the class mermaid.
+     it will replace the content of those divs with the generated svg -->
+<script type="module">
+    import mermaid from '{{ config.base_url | safe }}/mermaid.esm.min.mjs';
+
+    let darkMode = (
+        localStorage.getItem('theme') === 'dark'
+        || !localStorage.getItem('theme') && window.matchMedia("(prefers-color-scheme: dark)").matches
+    );
+    darkMode = false; // disable darkmode for now
+
+    mermaid.initialize(
+        {
+            startOnLoad: true,
+            theme: (darkMode ? 'dark' : 'neutral'),
+            fontFamily: 'Roboto',
+            flowchart: {"curve": "monotoneY"},
+        }
+    );
+</script>
+
+</body>
+</html>
