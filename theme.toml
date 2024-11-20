@@ -23,3 +23,6 @@ include_content = true
 # be merged with user data, some kind of prefix or nesting is preferable
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
+
+# The place where the logo in the navbar should link to
+logo_redirect_to = "/docs/"
