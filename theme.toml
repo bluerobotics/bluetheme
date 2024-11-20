@@ -26,3 +26,15 @@ include_content = true
 
 # The place where the logo in the navbar should link to
 logo_redirect_to = "/docs/"
+
+[extra.sponsor]
+name = "Blue Robotics"
+url = "https://bluerobotics.com"
+
+[[extra.license]]
+name = "GPLv3"
+url = "https://www.gnu.org/licenses/gpl-3.0.en.html#license-text"
+
+[[extra.license]]
+name = "MIT"
+url = "https://opensource.org/license/mit"

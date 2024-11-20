@@ -1,0 +1,32 @@
+<div class="text-gray-500">
+<hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+Powered by
+<a href="https://www.getzola.org/" class="text-blue-br">Zola</a> end
+<a href="https://github.com/bluerobotics/bluetheme/" class="text-blue-br">Bluetheme</a>
+<span class="float-end">
+Documentation under
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <span class="text-blue-br"> CC BY-NC-SA 4.0</span>
+    <img class="w-5 inline-block" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="creative commons">
+    <img class="w-5 inline-block" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="attribution">
+    <img class="w-5 inline-block" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="non commercial">
+    <img class="w-5 inline-block" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="share alike">
+</a>
+</span>
+
+
+</br>
+{% if config.extra.sponsor %}
+<span class="">Sponsored by <a href="{{ config.extra.sponsor.url }}" class="text-blue-br">{{ config.extra.sponsor.name }}</a></span>
+{% endif %}
+
+{% if config.extra.license %}
+<span class="float-end">
+Code under
+{% for license in config.extra.license %}
+{% if not loop.first %} / {% endif %}
+<a href="{{ license.url }}" class="text-blue-br">{{ license.name }}</a>
+{% endfor %}
+</span>
+{% endif %}
+</div>
