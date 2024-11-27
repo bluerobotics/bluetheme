@@ -1,9 +1,15 @@
 <select id="version_selector"
-        onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);"
+        onchange="select_version(this)"
         class="w-full mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-blue-300 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-    <option selected value="/docs/latest/">Latest</option>
-    <option value="/docs/1.3/">1.3 (stable)</option>
-    <option value="/docs/1.2/">1.2</option>
-    <option value="/docs/1.1/">1.1</option>
-    <option value="/docs/1.0/">1.0</option>
+    <option {% if "/docs/latest/" in current_path %} selected {% endif %} value="/docs/latest/">Latest</option>
+    <option {% if "/docs/1.3/" in current_path %} selected {% endif %} value="/docs/1.3/">1.3 (stable)</option>
+    <option {% if "/docs/1.2/" in current_path %} selected {% endif %} value="/docs/1.2/">1.2</option>
+    <option {% if "/docs/1.1/" in current_path %} selected {% endif %} value="/docs/1.1/">1.1</option>
+    <option {% if "/docs/1.0/" in current_path %} selected {% endif %} value="/docs/1.0/">1.0</option>
 </select>
+
+<script>
+    function select_version(e) {
+        window.location = e.options[e.selectedIndex].value;
+    }
+</script>
