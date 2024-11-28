@@ -58,6 +58,10 @@
         @apply text-blue-mariner underline hover:no-underline
     }
 
+    .markdown a.zola-anchor {
+        @apply no-underline text-lg
+    }
+
     .markdown li ul {
         @apply list-disc list-inside text-lg ms-6
     }
