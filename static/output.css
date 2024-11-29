@@ -1738,9 +1738,16 @@ input:checked + .toggle-bg {
 }
 
 .markdown a.zola-anchor {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  margin-inline-start: -1.5rem;
+  margin-inline-end: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
   text-decoration-line: none;
+}
+
+.markdown a.zola-anchor:hover {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .markdown li ul {
@@ -2481,8 +2488,9 @@ input:checked + .toggle-bg {
   padding: 1.5rem;
 }
 
-.p-8 {
-  padding: 2rem;
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .px-2 {

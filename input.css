@@ -59,7 +59,7 @@
     }
 
     .markdown a.zola-anchor {
-        @apply no-underline text-lg
+        @apply no-underline -ms-6 me-2 text-gray-100 hover:text-gray-500
     }
 
     .markdown li ul {
