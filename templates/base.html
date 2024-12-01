@@ -5,6 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title> BlueOS Documentation</title>
     <link href="{{ config.base_url | safe }}/output.css" rel="stylesheet">
+    {% if "/docs/stable" not in config.base_url %} {# Prioritise stable docs for online search indexing. #}
+      <link rel="canonical" href="{{ current_url | regex_replace(pattern=`\/docs\/[^\/]*`, rep=`/docs/stable`) | safe }}" />
+    {% endif %}
 </head>
 
 <body class="antialiased h-[calc(100vh-65px)]">
