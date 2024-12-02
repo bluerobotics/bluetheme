@@ -58,7 +58,7 @@
     }
 
     /* Footnote element followed by a paragraph need to to change the display to inline. */
-    .markdown .footnote-definition  p{
+    .markdown .footnote-definition  p {
         @apply inline bg-gray-50 text-xs text-gray-500 ms-2
     }
 
@@ -90,6 +90,7 @@
     .markdown pre > code {
         @apply text-gray-500 ms-1 me-1 font-mono text-sm bg-transparent
     }
+
     /** Table **/
     .markdown tbody tr {
         @apply border-b-2 border-gray-100 align-text-top;
