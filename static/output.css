@@ -1672,6 +1672,14 @@ input:checked + .toggle-bg {
   font-weight: 900;
 }
 
+.markdown h5 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 900;
+}
+
 .markdown p {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1680,23 +1688,39 @@ input:checked + .toggle-bg {
 }
 
 .markdown ul {
-  margin-inline-start: 0.75rem;
-  list-style-position: inside;
+  margin-inline-start: 1.5rem;
+  list-style-position: outside;
   list-style-type: disc;
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
 .markdown ol {
-  margin-inline-start: 0.75rem;
-  list-style-position: inside;
+  margin-inline-start: 1.5rem;
+  list-style-position: outside;
   list-style-type: decimal;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 /* Ordered elements sometimes have a paragraph and even images inside it, need to change the display to inline */
 
 .markdown ol p {
   display: inline;
+}
+
+.markdown li {
+  padding-inline-start: 0.5rem;
+}
+
+/* Nested list items look nicer with different bullets, but tailwind doesn't support them */
+
+.markdown li ul {
+  list-style-type: circle;
+}
+
+.markdown li li ul {
+  list-style-type: square;
 }
 
 /* Footnote element followed by a paragraph need to to change the display to inline. */
@@ -1747,15 +1771,7 @@ input:checked + .toggle-bg {
 
 .markdown a.zola-anchor:hover {
   --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
-.markdown li ul {
-  margin-inline-start: 1.5rem;
-  list-style-position: inside;
-  list-style-type: disc;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .markdown img {
