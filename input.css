@@ -32,16 +32,29 @@
     }
 
     .markdown ul {
-        @apply list-disc list-inside text-lg ms-3
+        @apply list-disc list-outside text-lg ms-6
     }
 
     .markdown ol {
-        @apply list-decimal list-inside ms-3
+        @apply list-decimal list-outside text-lg ms-6
     }
 
     /* Ordered elements sometimes have a paragraph and even images inside it, need to change the display to inline */
-    .markdown ol p{
+    .markdown ol p {
         @apply inline
+    }
+
+    .markdown li {
+        @apply ps-2
+    }
+
+    /* Nested list items look nicer with different bullets, but tailwind doesn't support them */
+    .markdown li ul {
+        list-style-type: circle;
+    }
+
+    .markdown li li ul {
+        list-style-type: square;
     }
 
     /* Footnote element followed by a paragraph need to to change the display to inline. */
@@ -64,10 +77,6 @@
 
     .markdown a.zola-anchor {
         @apply no-underline -ms-6 me-2 text-gray-100 hover:text-gray-500
-    }
-
-    .markdown li ul {
-        @apply list-disc list-inside text-lg ms-6
     }
 
     .markdown img {
