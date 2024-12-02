@@ -23,6 +23,10 @@
         @apply text-xl py-2 font-black
     }
 
+    .markdown h5 {
+        @apply text-lg py-2 font-black
+    }
+
     .markdown p {
         @apply py-2 text-lg
     }
