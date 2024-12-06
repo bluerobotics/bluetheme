@@ -27,6 +27,10 @@ include_content = true
 # The place where the logo in the navbar should link to
 logo_redirect_to = "/docs/"
 
+# If you enable this option, a select widget will be available to switch between different versions.
+# You need to provide an url for a jsonp file, an example can be found in the bluetheme docs.
+# version_choices = "http://br-www-docs.s3-website-us-east-1.amazonaws.com/data.jsonp"
+
 [extra.sponsor]
 name = "Blue Robotics"
 url = "https://bluerobotics.com"
