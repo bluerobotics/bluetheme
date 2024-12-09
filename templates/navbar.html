@@ -17,6 +17,10 @@
                              alt="BlueOS Logo"/>
                         <span class="self-center text-2xl font-semibold whitespace-nowrap text-white"></span>
                     </a>
+                    {% if config.extra.version_choices %}
+                        {% include "version_selector.html" %}
+                    {% endif %}
+
                 </div>
                 <div class="flex"></div>
                 <div class="flex items-center lg:order-2">
