@@ -5,7 +5,17 @@
 
 <script>
     function select_version(e) {
-        window.location = e.options[e.selectedIndex].value;
+        const redirect_path = e.options[e.selectedIndex].value
+        const redirect_parts = redirect_path.split("/")
+
+        // If the redirect path comes with a trailing slash, we need account it when removing the parts since the split
+        // will include an extra (blank) element.
+        const offset = redirect_path.endsWith("/") ? 1 : 0
+
+        let split_path = window.location.pathname.split("/")
+        split_path.splice(0,redirect_parts.length - offset)
+
+        window.location = redirect_path + split_path.join("/")
     }
 
     function fetch_version_list(data){
