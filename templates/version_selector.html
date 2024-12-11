@@ -1,15 +1,42 @@
-<select id="version_selector"
+<select id="version_selector" base_url="{{config.base_url}}"
         onchange="select_version(this)"
-        class="w-full mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-blue-300 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-    <option {% if "/docs/latest" in config.base_url %} selected {% endif %} value="/docs/latest/">Latest</option>
-    <option {% if "/docs/stable" in config.base_url %} selected {% endif %} value="/docs/stable/">1.3 (stable)</option>
-    <option {% if "/docs/1.2" in config.base_url %} selected {% endif %} value="/docs/1.2/">1.2</option>
-    <option {% if "/docs/1.1" in config.base_url %} selected {% endif %} value="/docs/1.1/">1.1</option>
-    <option {% if "/docs/1.0" in config.base_url %} selected {% endif %} value="/docs/1.0/">1.0</option>
+        class="w-32 mt-1 bg-blue-mariner border border-transparent text-white text-sm rounded-xl focus:ring-transparent focus:border-transparent block">
 </select>
 
 <script>
+    fetch("{{ config.extra.version_choices | safe }}").then(res => res.json())
+    .then(data => {
+        fetch_version_list(data)
+    })
+
     function select_version(e) {
-        window.location = e.options[e.selectedIndex].value;
+        const redirect_path = e.options[e.selectedIndex].value
+        const redirect_parts = redirect_path.split("/")
+
+        // If the redirect path comes with a trailing slash, we need account it when removing the parts since the split
+        // will include an extra (blank) element.
+        const offset = redirect_path.endsWith("/") ? 1 : 0
+
+        let split_path = window.location.pathname.split("/")
+        split_path.splice(0,redirect_parts.length - offset)
+
+        window.location = redirect_path + split_path.join("/")
+    }
+
+    function fetch_version_list(data){
+        const select = document.getElementById('version_selector');
+        const base_url = select.getAttribute("base_url")
+
+        data.forEach(function(entry){
+            const opt = document.createElement('option');
+
+            if (base_url.includes(entry[0])) {
+                opt.setAttribute('selected', true);
+            }
+
+            opt.value = entry[0];
+            opt.innerHTML = entry[1];
+            select.appendChild(opt);
+        })
     }
 </script>
