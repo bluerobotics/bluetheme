@@ -4,6 +4,11 @@
 </select>
 
 <script>
+    fetch("{{ config.extra.version_choices | safe }}").then(res => res.json())
+    .then(data => {
+        fetch_version_list(data)
+    })
+
     function select_version(e) {
         const redirect_path = e.options[e.selectedIndex].value
         const redirect_parts = redirect_path.split("/")
@@ -35,5 +40,3 @@
         })
     }
 </script>
-
-<script src="{{config.extra.version_choices}}"></script>
