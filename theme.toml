@@ -1,9 +1,9 @@
 name = "Blue Theme"
 description = "A classic blog theme"
 license = "MIT"
-homepage = "https://github.com/getzola/hyde"
+homepage = "https://github.com/bluerobotics/bluetheme"
 # The minimum version of Zola required
-min_version = "0.4.0"
+min_version = "0.19.2"
 # An optional live demo URL
 demo = ""
 
@@ -24,8 +24,11 @@ include_content = true
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
 
-# The place where the logo in the navbar should link to
-logo_redirect_to = "/docs/"
+[extra.logo]
+# The path to the navbar logo image
+image_source = "https://blueos.cloud/assets/img/blueos-logo-white.png"
+# The place where the logo in the navbar should link to, e.g.
+#redirect_to = "/docs/"
 
 # If you enable this option, a select widget will be available to switch between different versions.
 # You need to provide a url for a json file, an example can be found in the bluetheme docs.
