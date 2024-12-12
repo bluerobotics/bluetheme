@@ -55,9 +55,9 @@
                 </div>
         </div>
 
-        <h5 class="font-bold">BlueOS Documentation</h5>
         {% set root_section = get_section(path="_index.md") %}
-
+        <h5 class="font-bold">{{ root_section.title }}</h5>
+        
         {% for _page in root_section.pages %}
             <a href="{{ _page.permalink }}" class="block ms-1 {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
         {% endfor %}
