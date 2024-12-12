@@ -20,8 +20,8 @@
                 </div>
                 <div class="flex"></div>
                 <div class="flex items-center lg:order-2">
-                    <div class="hidden w-full md:block md:w-auto me-10" id="navbar-dropdown">
-                        <ul class="hidden flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 text-white">
+                    <div class="w-full md:block md:w-auto me-10" id="navbar-dropdown">
+                        <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 text-white">
                             <li>
                                 <button id="mega-menu-about"
                                         data-dropdown-toggle="mega-menu-about-content"
@@ -87,36 +87,24 @@
          class="hidden relative z-50 w-full megamenu">
         <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-white dark:text-gray-400 md:grid-cols-4 md:px-6 z-50">
             <ul class="hidden mb-4 space-y-2 md:mb-0 md:block" aria-labelledby="mega-menu-full-image-button">
-                <li>
-                    <a href="#"
-                       class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
-                        Autopilots
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                        BlueOS
-                    </a>
-                </li>
+            </ul>
+            <ul class="mb-4 space-y-2 md:mb-0">
             </ul>
             <ul class="mb-4 space-y-2 md:mb-0">
                 <li>
-                    <a href="#"
-                       class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
-                        Extensions
+                    <span class="text-blue-br text-lg font-bold">
+                        General
+                    </span>
+                </li>
+                <li>
+                    <a href="https://bluerobotics.com/about/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        About Blue Robotics
                     </a>
                 </li>
+<!--
                 <li>
                     <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         Open Source License
-                    </a>
-                </li>
-            </ul>
-            <ul class="mb-4 space-y-2 md:mb-0">
-                <li>
-                    <a href="/extensions"
-                       class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
-                        Developer
                     </a>
                 </li>
                 <li>
@@ -124,17 +112,27 @@
                         Sponsorship
                     </a>
                 </li>
+-->
             </ul>
             <ul class="mb-4 space-y-2 md:mb-0">
                 <li>
-                    <a href="#"
-                       class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
-                        Vehicles
+                    <span class="text-blue-br text-lg font-bold">
+                        Applications
+                    </span>
+                </li>
+                <li>
+                    <a href="https://blueos.cloud/docs/latest/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        BlueOS
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                        About BlueRobotics
+                    <a href="https://blueos.cloud/cockpit/docs/latest/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        Cockpit
+                    </a>
+                </li>
+                <li>
+                    <a href="https://docs.bluerobotics.com/ping-viewer" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        Ping Viewer
                     </a>
                 </li>
             </ul>
@@ -148,122 +146,112 @@
         <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-white dark:text-gray-400 md:grid-cols-4 md:px-6 z-50">
             <ul class="hidden mb-4 space-y-2 md:mb-0 md:block" aria-labelledby="mega-menu-full-image-button">
                 <li>
-                    <a href="#"
-                       class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
-                        Autopilots
-                    </a>
+                    <span class="text-blue-br text-lg font-bold">
+                           Autopilots
+                    </span>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://ardupilot.org/copter/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         ArduCopter
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://ardupilot.org/plane/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         ArduPlane
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://ardupilot.org/rover/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         ArduRover
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://www.ardusub.com/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         ArduSub
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://docs.px4.io/main/en/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         PX4
                     </a>
                 </li>
             </ul>
             <ul class="mb-4 space-y-2 md:mb-0">
                 <li>
-                    <a href="#"
-                       class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
+                    <span class="text-blue-br text-lg font-bold">
                         Extensions
-                    </a>
+                    </span>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://blueos.cloud/cockpit/docs" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         Cockpit
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://docs.bluerobotics.com/ping-viewer/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         Ping Viewer
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://github.com/BlueOS-community/blueos-node-red" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         Node-Red
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                        MAVLink
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                        QGroundControl
                     </a>
                 </li>
             </ul>
             <ul class="mb-4 space-y-2 md:mb-0">
                 <li>
-                    <a href="/extensions"
-                       class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
-                        Developer
-                    </a>
+                    <span class="text-blue-br text-lg font-bold">
+                        Developers
+                    </span>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://blueos.cloud/docs/latest/development/core/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         BlueOS Core Development
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://blueos.cloud/docs/latest/development/extensions/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         BlueOS Extension Development
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://github.com/bluerobotics/navigator-lib?tab=readme-ov-file" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         Navigator Lib
                     </a>
                 </li>
+<!--
                 <li>
                     <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         Sensors
                     </a>
                 </li>
+-->
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://mavlink.io/en/messages/common.html" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         MAVLink Messages
                     </a>
                 </li>
+<!--
                 <li>
                     <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         Lua Scripting Guide
                     </a>
                 </li>
+-->
             </ul>
             <ul class="mb-4 space-y-2 md:mb-0">
                 <li>
-                    <a href="#"
-                       class="text-blue-br text-lg hover:underline hover:text-blue-600 dark:hover:text-blue-500 font-bold">
+                    <span class="text-blue-br text-lg font-bold">
                         Vehicles
-                    </a>
+                    </span>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://bluerobotics.com/guide-tag/bluerov2/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         BlueROV
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://bluerobotics.com/guide-tag/blueboat/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         BlueBoat
                     </a>
                 </li>
@@ -281,39 +269,59 @@
             <ul class="mb-4 space-y-2 md:mb-0">
             </ul>
             <ul class="mb-4 space-y-2 md:mb-0">
-            </ul>
-            <ul class="mb-4 space-y-2 md:mb-0">
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                        BlueRobotics Forum
+                    <span class="text-blue-br text-lg font-bold">
+                        Blue Robotics
+                    </span>
+                </li>
+                <li>
+                    <a href="https://discuss.bluerobotics.com/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        Discussion Forum
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                        Blue Robotics Chat (Discord)
+                    <a href="https://discord.gg/hvcRQRpen4" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        Chat (Discord)
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                        ArduPilot Forum
+                    <a href="https://bluerobotics.com/technical-support/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        Technical Support Form
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                        ArduPilot Developer Chat
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
-                        PX4 Forum
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                    <a href="https://bluerobotics.com/events/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                         Events/Conferences
                     </a>
                 </li>
             </ul>
+            <ul class="mb-4 space-y-2 md:mb-0">
+                <li>
+                    <span class="text-blue-br text-lg font-bold">
+                        External
+                    </span>
+                </li>
+                <li>
+                    <a href="https://discuss.ardupilot.org/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        ArduPilot Forum
+                    </a>
+                </li>
+                <li>
+                    <a href="https://ardupilot.org/discord" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        ArduPilot Developer Chat
+                    </a>
+                </li>
+                <li>
+                    <a href="https://discuss.px4.io/" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        PX4 Forum
+                    </a>
+                </li>
+                 <li>
+                    <a href="https://docs.qgroundcontrol.com/master/en/qgc-user-guide/index.html" class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                        QGroundControl
+                    </a>
+                </li>
+           </ul>
         </div>
     </div>
 </nav>
