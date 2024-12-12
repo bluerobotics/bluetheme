@@ -28,7 +28,7 @@ include_content = true
 logo_redirect_to = "/docs/"
 
 # If you enable this option, a select widget will be available to switch between different versions.
-# You need to provide an url for a jsonp file, an example can be found in the bluetheme docs.
+# You need to provide a url for a json file, an example can be found in the bluetheme docs.
 # version_choices = "/docs/data.json"
 
 [extra.sponsor]
