@@ -1,7 +1,7 @@
 
 <!-- define variable to where the logo should redirect to -->
-{% if config.extra.logo_redirect_to %}
-    {% set logo_redirect_to = config.extra.logo_redirect_to %}
+{% if config.extra.logo.redirect_to %}
+    {% set logo_redirect_to = config.extra.logo.redirect_to %}
 {% else %}
     {% set logo_redirect_to = config.base_url | safe %}
 {% endif %}
@@ -12,9 +12,9 @@
             <div class="flex flex-wrap justify-between items-center">
                 <div class="flex justify-start items-center">
                     <a href="{{ logo_redirect_to }}" class="flex mr-4">
-                        <img src="https://blueos.cloud/assets/img/blueos-logo-white.png"
+                        <img src="{{ config.extra.logo.image_source }}"
                              class="mr-3 h-10"
-                             alt="BlueOS Logo"/>
+                             alt="Software Logo"/>
                         <span class="self-center text-2xl font-semibold whitespace-nowrap text-white"></span>
                     </a>
                 </div>
