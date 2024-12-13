@@ -26,12 +26,27 @@
     function fetch_version_list(data){
         const select = document.getElementById('version_selector');
         const base_url = select.getAttribute("base_url")
+        const stabilityColors = {
+            dev:"RebeccaPurple",
+            stable:"Green",
+            recent:"Peru",
+            old:"DarkRed",
+            archived:"DimGrey",
+            unknown:"#135da3"
+        }
+
 
         data.forEach(function(entry){
             const opt = document.createElement('option');
 
             if (base_url.includes(entry[0])) {
                 opt.setAttribute('selected', true);
+                // set colour based on stability of release
+                select.style.background = stabilityColors[entry[2] ?? "unknown"]
+                // add the dropdown arrow back in -_-
+                select.style.backgroundImage = "url(\"data:image/svg+xml;charset=utf-8,<svg width='22' height='6' xmlns='http:%2F%2Fwww.w3.org/2000/svg'><path d='M1 1l4 4 4-4' fill='none' stroke='grey' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>\")";
+                select.style.backgroundRepeat = "no-repeat";
+                select.style.backgroundPosition = "right";
             }
 
             opt.value = entry[0];
