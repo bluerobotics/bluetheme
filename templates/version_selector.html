@@ -20,7 +20,7 @@
         let split_path = window.location.pathname.split("/")
         split_path.splice(0,redirect_parts.length - offset)
 
-        window.location = redirect_path + split_path.join("/")
+        window.location = redirect_path + '/' + split_path.join("/")
     }
 
     function fetch_version_list(data){
