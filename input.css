@@ -101,7 +101,11 @@
     }
 
     .markdown thead th {
-        @apply pb-3;
+        @apply px-2 pb-3 text-left;
+    }
+
+    .markdown tbody td {
+        @apply px-2 pt-1 pb-2;
     }
 
     .markdown button {

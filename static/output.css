@@ -1818,7 +1818,17 @@ input:checked + .toggle-bg {
 }
 
 .markdown thead th {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   padding-bottom: 0.75rem;
+  text-align: left;
+}
+
+.markdown tbody td {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.5rem;
 }
 
 .markdown button {
