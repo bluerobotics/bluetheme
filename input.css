@@ -4,19 +4,19 @@
 
 @layer components {
     .markdown h1 {
-        @apply text-4xl py-4 font-black text-green-kelp
+        @apply text-4xl py-4 font-black text-tertiary
     }
 
     .markdown h2 {
-        @apply text-3xl py-4 font-black text-green-kelp
+        @apply text-3xl py-4 font-black text-tertiary
     }
 
     .markdown h3 {
-        @apply text-2xl py-2 font-black text-green-kelp
+        @apply text-2xl py-2 font-black text-tertiary
     }
 
     .markdown h3 > a{
-        @apply text-2xl py-2 font-black text-green-kelp
+        @apply text-2xl py-2 font-black text-tertiary
     }
 
     .markdown h4 {
@@ -72,7 +72,7 @@
     }
 
     .markdown a {
-        @apply text-blue-mariner underline hover:no-underline
+        @apply text-secondary underline hover:no-underline
     }
 
     .markdown a.zola-anchor {
@@ -84,7 +84,7 @@
     }
 
     .markdown code {
-        @apply text-green-kelp ms-1 me-1 font-mono text-sm bg-gray-50
+        @apply text-tertiary ms-1 me-1 font-mono text-sm bg-gray-50
     }
 
     .markdown pre > code {
@@ -119,7 +119,7 @@
     }
     /* style the search modal content */
     .search_section {
-        @apply text-blue-mariner block
+        @apply text-secondary block
     }
 
     .search_description {

@@ -15,14 +15,16 @@ module.exports = {
         require('flowbite-typography'),
         createThemes({
             blueos: {
-                'green-kelp': '#4fa483',
-                'blue-br': '#2699d0',
-                'blue-mariner': '#135da3',
+                'navbar': '#2699d0',
+                'primary': '#2699d0',
+                'secondary': '#135da3',
+                'tertiary': '#4fa483',
             },
             cockpit: {
-                'green-kelp': '#924fa4',
-                'blue-br': '#528846',
-                'blue-mariner': '#8f5656',
+                'navbar': '#d026b9',
+                'primary': '#2699d0',
+                'secondary': '#135da3',
+                'tertiary': '#4fa483',
             },
         }),
     ]
