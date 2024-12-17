@@ -1631,7 +1631,7 @@ input:checked + .toggle-bg {
   line-height: 2.5rem;
   font-weight: 900;
   --tw-text-opacity: 1;
-  color: rgb(79 164 131 / var(--tw-text-opacity, 1));
+  color: hsl(var(--twc-green-kelp) / var(--twc-green-kelp-opacity, var(--tw-text-opacity)));
 }
 
 .markdown h2 {
@@ -1641,7 +1641,7 @@ input:checked + .toggle-bg {
   line-height: 2.25rem;
   font-weight: 900;
   --tw-text-opacity: 1;
-  color: rgb(79 164 131 / var(--tw-text-opacity, 1));
+  color: hsl(var(--twc-green-kelp) / var(--twc-green-kelp-opacity, var(--tw-text-opacity)));
 }
 
 .markdown h3 {
@@ -1651,7 +1651,7 @@ input:checked + .toggle-bg {
   line-height: 2rem;
   font-weight: 900;
   --tw-text-opacity: 1;
-  color: rgb(79 164 131 / var(--tw-text-opacity, 1));
+  color: hsl(var(--twc-green-kelp) / var(--twc-green-kelp-opacity, var(--tw-text-opacity)));
 }
 
 .markdown h3 > a {
@@ -1661,7 +1661,7 @@ input:checked + .toggle-bg {
   line-height: 2rem;
   font-weight: 900;
   --tw-text-opacity: 1;
-  color: rgb(79 164 131 / var(--tw-text-opacity, 1));
+  color: hsl(var(--twc-green-kelp) / var(--twc-green-kelp-opacity, var(--tw-text-opacity)));
 }
 
 .markdown h4 {
@@ -1753,7 +1753,7 @@ input:checked + .toggle-bg {
 
 .markdown a {
   --tw-text-opacity: 1;
-  color: rgb(19 93 163 / var(--tw-text-opacity, 1));
+  color: hsl(var(--twc-blue-mariner) / var(--twc-blue-mariner-opacity, var(--tw-text-opacity)));
   text-decoration-line: underline;
 }
 
@@ -1788,7 +1788,7 @@ input:checked + .toggle-bg {
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-text-opacity: 1;
-  color: rgb(79 164 131 / var(--tw-text-opacity, 1));
+  color: hsl(var(--twc-green-kelp) / var(--twc-green-kelp-opacity, var(--tw-text-opacity)));
 }
 
 .markdown pre > code {
@@ -1863,7 +1863,7 @@ input:checked + .toggle-bg {
 .search_section {
   display: block;
   --tw-text-opacity: 1;
-  color: rgb(19 93 163 / var(--tw-text-opacity, 1));
+  color: hsl(var(--twc-blue-mariner) / var(--twc-blue-mariner-opacity, var(--tw-text-opacity)));
 }
 
 .search_description {
@@ -2475,12 +2475,12 @@ input:checked + .toggle-bg {
 
 .bg-blue-br {
   --tw-bg-opacity: 1;
-  background-color: rgb(38 153 208 / var(--tw-bg-opacity, 1));
+  background-color: hsl(var(--twc-blue-br) / var(--twc-blue-br-opacity, var(--tw-bg-opacity)));
 }
 
 .bg-blue-mariner {
   --tw-bg-opacity: 1;
-  background-color: rgb(19 93 163 / var(--tw-bg-opacity, 1));
+  background-color: hsl(var(--twc-blue-mariner) / var(--twc-blue-mariner-opacity, var(--tw-bg-opacity)));
 }
 
 .bg-gray-100 {
@@ -2672,7 +2672,7 @@ input:checked + .toggle-bg {
 
 .text-blue-br {
   --tw-text-opacity: 1;
-  color: rgb(38 153 208 / var(--tw-text-opacity, 1));
+  color: hsl(var(--twc-blue-br) / var(--twc-blue-br-opacity, var(--tw-text-opacity)));
 }
 
 .text-gray-400 {
@@ -2697,7 +2697,7 @@ input:checked + .toggle-bg {
 
 .text-green-kelp {
   --tw-text-opacity: 1;
-  color: rgb(79 164 131 / var(--tw-text-opacity, 1));
+  color: hsl(var(--twc-green-kelp) / var(--twc-green-kelp-opacity, var(--tw-text-opacity)));
 }
 
 .text-purple-500 {
@@ -2775,6 +2775,18 @@ input:checked + .toggle-bg {
 
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.blueos,[data-theme="blueos"] {
+  --twc-green-kelp: 156.70000000000005 35% 47.6%;
+  --twc-blue-br: 199.39999999999998 69.1% 48.2%;
+  --twc-blue-mariner: 209.20000000000005 79.1% 35.7%;
+}
+
+.cockpit,[data-theme="cockpit"] {
+  --twc-green-kelp: 287.29999999999995 35% 47.6%;
+  --twc-blue-br: 109.10000000000002 32% 40.4%;
+  --twc-blue-mariner: 0 24.9% 44.9%;
 }
 
 @media (min-width: 1536px) {
