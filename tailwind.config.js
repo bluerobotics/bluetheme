@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const { createThemes } = require('tw-colors');
 module.exports = {
     content: [
         "./node_modules/flowbite/**/*.js",
@@ -7,16 +8,25 @@ module.exports = {
         "./templates/**/*.html",
     ],
     theme: {
-        colors: {
-            'green-kelp': '#4fa483',
-            'blue-br': '#2699d0',
-            'blue-mariner': '#135da3',
-        },
         extend: {},
     },
     plugins: [
         require('flowbite/plugin'),
         require('flowbite-typography'),
+        createThemes({
+            blueos: {
+                'navbar': '#2699d0',
+                'primary': '#2699d0',
+                'secondary': '#135da3',
+                'tertiary': '#4fa483',
+            },
+            cockpit: {
+                'navbar': '#d026b9',
+                'primary': '#2699d0',
+                'secondary': '#135da3',
+                'tertiary': '#4fa483',
+            },
+        }),
     ]
 }
 

@@ -23,6 +23,7 @@ include_content = true
 # be merged with user data, some kind of prefix or nesting is preferable
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
+palette = "blueos"
 
 [extra.logo]
 # The path to the navbar logo image
