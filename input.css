@@ -4,27 +4,31 @@
 
 @layer components {
     .markdown h1 {
-        @apply text-4xl py-4 font-black text-green-kelp
+        @apply text-4xl py-4 font-black text-primary
     }
 
     .markdown h2 {
-        @apply text-3xl py-4 font-black text-green-kelp
+        @apply text-3xl py-4 font-black text-primary
     }
 
     .markdown h3 {
-        @apply text-2xl py-2 font-black text-green-kelp
+        @apply text-2xl py-2 font-black text-primary
     }
 
-    .markdown h3 > a{
-        @apply text-2xl py-2 font-black text-green-kelp
+    .markdown h3 > a {
+        @apply text-2xl py-2 font-black text-primary
     }
 
     .markdown h4 {
-        @apply text-xl py-2 font-black
+        @apply text-xl py-2 font-black text-tertiary
     }
 
     .markdown h5 {
-        @apply text-lg py-2 font-black
+        @apply text-lg py-2 font-black text-tertiary
+    }
+
+    .markdown h6 {
+        @apply text-base py-2 font-black text-tertiary
     }
 
     .markdown p {
@@ -72,7 +76,7 @@
     }
 
     .markdown a {
-        @apply text-blue-mariner underline hover:no-underline
+        @apply text-secondary underline hover:no-underline
     }
 
     .markdown a.zola-anchor {
@@ -84,7 +88,7 @@
     }
 
     .markdown code {
-        @apply text-green-kelp ms-1 me-1 font-mono text-sm bg-gray-50
+        @apply text-primary ms-1 me-1 font-mono text-sm bg-gray-50
     }
 
     .markdown pre > code {
@@ -109,17 +113,17 @@
     }
 
     .markdown button {
-        @apply block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-auto
+        @apply block bg-quaternary hover:bg-tertiary text-white font-bold py-2 px-4 rounded mx-auto
     }
 
     /* megamenu customization */
 
     .megamenu {
-        background: rgba(1, 47, 70, 0.99);
+        @apply bg-tertiary
     }
     /* style the search modal content */
     .search_section {
-        @apply text-blue-mariner block
+        @apply text-primary block
     }
 
     .search_description {
