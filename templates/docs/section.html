@@ -64,7 +64,7 @@
         {#  Level 1 #}
         {% for _level_1 in root_section.subsections %}
             {% set level_1 = get_section(path=_level_1) %}
-            <span class="mt-2 block ms-0 text-green-kelp font-bold">{{ level_1.title }}</span>
+            <span class="mt-2 block ms-0 text-primary font-bold">{{ level_1.title }}</span>
             <ul>
                 {% for page in level_1.pages %}
                     <li class="my-1">
@@ -76,7 +76,7 @@
             {#  Level 2 #}
             {% for _level_2 in level_1.subsections %}
                 {% set level_2 = get_section(path=_level_2) %}
-                <span class="block mt-2 ms-3 text-green-kelp font-bold">{{ level_2.title }}</span>
+                <span class="block mt-2 ms-3 text-primary font-bold">{{ level_2.title }}</span>
                 <ul>
                     {% for page in level_2.pages %}
                         <li class="my-1">
@@ -87,7 +87,7 @@
                 {# Level 3 #}
                 {% for _level_3 in level_2.subsections %}
                     {% set level_3 = get_section(path=_level_3) %}
-                    <span class="block mt-2 ms-6 text-green-kelp font-bold">{{ level_3.title }}</span>
+                    <span class="block mt-2 ms-6 text-primary font-bold">{{ level_3.title }}</span>
                     <ul>
                         {% for page in level_3.pages %}
                             <li class="my-1">

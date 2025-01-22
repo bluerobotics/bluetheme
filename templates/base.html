@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bluetheme">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     {% set root_section = get_section(path="_index.md") %}
     <title>{{ root_section.title }}</title>
     <link href="{{ config.base_url | safe }}/output.css" rel="stylesheet">
+    {% if config.extra.palette %}
+    <style>
+    /* override default theme colours */
+    :root {
+        {% for name, colour in config.extra.palette
+         %}--twc-{{ name }}: {{ colour }};{%
+         endfor %}
+    }
+    </style>
+    {% endif %}
     {% if "/docs/stable" not in config.base_url %} {# Prioritise stable docs for online search indexing. #}
       <link rel="canonical" href="{{ current_url | regex_replace(pattern=`\/docs\/[^\/]*`, rep=`/docs/stable`) | safe }}" />
     {% endif %}

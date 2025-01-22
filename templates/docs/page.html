@@ -4,7 +4,7 @@
     <div>
         <!-- Use button to initialize modal, but keep the button hidden -->
         <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-                class="hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="hidden text-white bg-tertiary hover:bg-quaternary focus:ring-4 focus:outline-none focus:ring-tertiary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-tertiary dark:hover:bg-quaternary dark:focus:ring-tertiary"
                 type="button">
             Search
         </button>
@@ -23,7 +23,7 @@
                     </svg>
                 </div>
                 <input type="search" id="default-search" onclick="searchOnClick()"
-                       class="block w-full ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                       class="block w-full ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-tertiary focus:border-tertiary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-tertiary dark:focus:border-tertiary"
                        placeholder="Search docs..." required/>
             </div>
         </form>
@@ -58,18 +58,18 @@
         <h5 class="font-bold">{{ root_section.title }}</h5>
         
         {% for _page in root_section.pages %}
-            <a href="{{ _page.permalink }}" class="block ms-1 {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
+            <a href="{{ _page.permalink }}" class="block ms-1 {% if _page.permalink == page.permalink %} text-secondary {% else %} text-black {% endif %}">{{ _page.title }}</a>
         {% endfor %}
 
         {#  Level 1 #}
         {% for _level_1 in root_section.subsections %}
             {% set level_1 = get_section(path=_level_1) %}
-            <span class="mt-2 block ms-0 text-green-kelp font-bold">{{ level_1.title }}</span>
+            <span class="mt-2 block ms-0 text-primary font-bold">{{ level_1.title }}</span>
             <ul>
                 {% for _page in level_1.pages %}
                     <li class="my-1">
                         <a href="{{ _page.permalink }}"
-                           class="block ms-3 font-normal {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
+                           class="block ms-3 font-normal {% if _page.permalink == page.permalink %} text-secondary {% else %} text-black {% endif %}">{{ _page.title }}</a>
                     </li>
                 {% endfor %}
             </ul>
@@ -77,12 +77,12 @@
             {#  Level 2 #}
             {% for _level_2 in level_1.subsections %}
                 {% set level_2 = get_section(path=_level_2) %}
-                <span class="block mt-2 ms-3 text-green-kelp font-bold">{{ level_2.title }}</span>
+                <span class="block mt-2 ms-3 text-primary font-bold">{{ level_2.title }}</span>
                 <ul>
                     {% for _page in level_2.pages %}
                         <li class="my-1">
                             <a href="{{ _page.permalink }}"
-                               class="block ms-6 {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
+                               class="block ms-6 {% if _page.permalink == page.permalink %} text-secondary {% else %} text-black {% endif %}">{{ _page.title }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -90,12 +90,12 @@
                 {# Level 3 #}
                 {% for _level_3 in level_2.subsections %}
                     {% set level_3 = get_section(path=_level_3) %}
-                    <span class="block mt-2 ms-6 text-green-kelp font-bold">{{ level_3.title }}</span>
+                    <span class="block mt-2 ms-6 text-primary font-bold">{{ level_3.title }}</span>
                     <ul>
                         {% for _page in level_3.pages %}
                             <li class="my-1">
                                 <a href="{{ _page.permalink }}"
-                                   class="block ms-9 font-normal {% if _page.permalink == page.permalink %} text-blue-500 {% else %} text-black {% endif %}">{{ _page.title }}</a>
+                                   class="block ms-9 font-normal {% if _page.permalink == page.permalink %} text-secondary {% else %} text-black {% endif %}">{{ _page.title }}</a>
                             </li>
                         {% endfor %}
                     </ul>
