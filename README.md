@@ -1,5 +1,7 @@
 # bluetheme
-A [Zola](https://www.getzola.org/) theme for documenting Blue Robotics' software applications.
+A [Zola](https://www.getzola.org/) theme for documenting Blue Robotics' software applications:
+
+![theme-examples](theme-examples.png)
 
 ## Currently Used In...
 
