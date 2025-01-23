@@ -4,15 +4,14 @@ A [Zola](https://www.getzola.org/) theme for documenting Blue Robotics' software
 ## Currently Used In...
 
 - [BlueOS-docs](https://github.com/bluerobotics/BlueOS-docs)
-- [Cockpit-docs](https://github.com/bluerobotics-Cockpit-docs)
+- [Cockpit-docs](https://github.com/bluerobotics/Cockpit-docs)
 
 ## Local Usage
 
 1. install dependencies (e.g. tailwind and flowbite)
 
-    npm install
+    `npm install`
 
-2. generate the output.css file
+2. generate the `output.css` file
 
-    npx tailwindcss -i ./input.css -o ./static/output.css --watch
-
+    `npx tailwindcss -i ./input.css -o ./static/output.css --watch`
