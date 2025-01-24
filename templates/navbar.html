@@ -26,13 +26,14 @@
                 <div class="flex items-center lg:order-2">
                     <div class="w-full md:block md:w-auto me-10" id="navbar-dropdown">
                         <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 text-white">
+                            {% if config.extra.navbar %}{% for dropdown in config.extra.navbar %}
                             <li>
-                                <button id="mega-menu-about"
-                                        data-dropdown-toggle="mega-menu-about-content"
+                                <button id="mega-menu-{{ dropdown.name | lower }}"
+                                        data-dropdown-toggle="mega-menu-{{ dropdown.name | lower }}-content"
                                         data-dropdown-trigger="hover"
                                         data-dropdown-delay="100"
                                         class="flex items-center justify-between w-full py-2 px-3 rounded hover:bg-secondary md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0 md:w-auto">
-                                    About
+                                    {{ dropdown.name }}
                                     <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                          fill="none" viewBox="0 0 10 6">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -40,34 +41,7 @@
                                     </svg>
                                 </button>
                             </li>
-                            <li>
-                                <button id="mega-menu-full-cta-image-button"
-                                        data-dropdown-toggle="mega-menu-full-image-dropdown"
-                                        data-dropdown-trigger="hover"
-                                        data-dropdown-delay="100"
-                                        class="flex items-center justify-between w-full py-2 px-3 rounded hover:bg-secondary md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0 md:w-auto">
-                                    Docs
-                                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                         fill="none" viewBox="0 0 10 6">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                              stroke-width="2" d="m1 1 4 4 4-4"/>
-                                    </svg>
-                                </button>
-                            </li>
-                            <li>
-                                <button id="mega-menu-community"
-                                        data-dropdown-toggle="mega-menu-community-content"
-                                        data-dropdown-trigger="hover"
-                                        data-dropdown-delay="100"
-                                        class="flex items-center justify-between w-full py-2 px-3 rounded hover:bg-secondary md:hover:bg-transparent md:border-0 md:hover:text-secondary md:p-0 md:w-auto">
-                                    Community
-                                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                         fill="none" viewBox="0 0 10 6">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                              stroke-width="2" d="m1 1 4 4 4-4"/>
-                                    </svg>
-                                </button>
-                            </li>
+                            {% endfor %}{% endif %}
                         </ul>
                     </div>
                     <a href="/bluesim/"
@@ -85,247 +59,33 @@
         </div>
     </div>
 
-    <!-- About Megamenu content -->
+    {% if config.extra.navbar %}{% for dropdown in config.extra.navbar %}
+    <!-- {{ dropdown.name }} Megamenu content -->
     <!-- -->
-    <div id="mega-menu-about-content"
+    <div id="mega-menu-{{ dropdown.name | lower }}-content"
          class="hidden relative z-50 w-full megamenu">
         <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-white dark:text-gray-400 md:grid-cols-4 md:px-6 z-50">
-            <ul class="hidden mb-4 space-y-2 md:mb-0 md:block" aria-labelledby="mega-menu-full-image-button">
-            </ul>
-            <ul class="mb-4 space-y-2 md:mb-0">
-            </ul>
-            <ul class="mb-4 space-y-2 md:mb-0">
+            {% set num_cols = dropdown.columns | length %}
+            {% set columns = dropdown.columns %}
+            {% if num_cols < 4 %}{% set columns = range(end=(4 - num_cols)) | concat(with=columns) %}{% endif %}
+            {% for column in columns %}
+            <ul class="{% if loop.first %}{% if num_cols < 4 %}hidden {% endif %}md:block {% endif %}mb-4 space-y-2 md:mb-0"{% if loop.first %} aria-labelledby="mega-menu-full-image-button"{% endif %}>
+            {% if not column.heading %}</ul>{% continue %}{% endif %}
                 <li>
                     <span class="text-quaternary text-lg font-bold">
-                        General
+                        {{ column.heading }}
                     </span>
                 </li>
+                {% for link in column.links %}
                 <li>
-                    <a href="https://bluerobotics.com/about/" class="hover:underline hover:text-quaternary">
-                        About Blue Robotics
+                    <a href="{{ link.href }}" class="hover:underline hover:text-quaternary">
+                        {{ link.name }}
                     </a>
                 </li>
-<!--
-                <li>
-                    <a href="#" class="hover:underline hover:text-quaternary">
-                        Open Source License
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline hover:text-quaternary">
-                        Sponsorship
-                    </a>
-                </li>
--->
+                {% endfor %}
             </ul>
-            <ul class="mb-4 space-y-2 md:mb-0">
-                <li>
-                    <span class="text-quaternary text-lg font-bold">
-                        Applications
-                    </span>
-                </li>
-                <li>
-                    <a href="https://blueos.cloud/docs/latest/" class="hover:underline hover:text-quaternary">
-                        BlueOS
-                    </a>
-                </li>
-                <li>
-                    <a href="https://blueos.cloud/cockpit/docs/latest/" class="hover:underline hover:text-quaternary">
-                        Cockpit
-                    </a>
-                </li>
-                <li>
-                    <a href="https://docs.bluerobotics.com/ping-viewer" class="hover:underline hover:text-quaternary">
-                        Ping Viewer
-                    </a>
-                </li>
-            </ul>
+            {% endfor %}
         </div>
     </div>
-
-    <!-- Docs Megamenu content -->
-    <!-- -->
-    <div id="mega-menu-full-image-dropdown"
-         class="hidden relative z-50 w-full megamenu">
-        <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-white dark:text-gray-400 md:grid-cols-4 md:px-6 z-50">
-            <ul class="hidden mb-4 space-y-2 md:mb-0 md:block" aria-labelledby="mega-menu-full-image-button">
-                <li>
-                    <span class="text-quaternary text-lg font-bold">
-                           Autopilots
-                    </span>
-                </li>
-                <li>
-                    <a href="https://ardupilot.org/copter/" class="hover:underline hover:text-quaternary">
-                        ArduCopter
-                    </a>
-                </li>
-                <li>
-                    <a href="https://ardupilot.org/plane/" class="hover:underline hover:text-quaternary">
-                        ArduPlane
-                    </a>
-                </li>
-                <li>
-                    <a href="https://ardupilot.org/rover/" class="hover:underline hover:text-quaternary">
-                        ArduRover
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.ardusub.com/" class="hover:underline hover:text-quaternary">
-                        ArduSub
-                    </a>
-                </li>
-                <li>
-                    <a href="https://docs.px4.io/main/en/" class="hover:underline hover:text-quaternary">
-                        PX4
-                    </a>
-                </li>
-            </ul>
-            <ul class="mb-4 space-y-2 md:mb-0">
-                <li>
-                    <span class="text-quaternary text-lg font-bold">
-                        Extensions
-                    </span>
-                </li>
-                <li>
-                    <a href="https://blueos.cloud/cockpit/docs" class="hover:underline hover:text-quaternary">
-                        Cockpit
-                    </a>
-                </li>
-                <li>
-                    <a href="https://docs.bluerobotics.com/ping-viewer/" class="hover:underline hover:text-quaternary">
-                        Ping Viewer
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/BlueOS-community/blueos-node-red" class="hover:underline hover:text-quaternary">
-                        Node-Red
-                    </a>
-                </li>
-            </ul>
-            <ul class="mb-4 space-y-2 md:mb-0">
-                <li>
-                    <span class="text-quaternary text-lg font-bold">
-                        Developers
-                    </span>
-                </li>
-                <li>
-                    <a href="https://blueos.cloud/docs/latest/development/core/" class="hover:underline hover:text-quaternary">
-                        BlueOS Core Development
-                    </a>
-                </li>
-                <li>
-                    <a href="https://blueos.cloud/docs/latest/development/extensions/" class="hover:underline hover:text-quaternary">
-                        BlueOS Extension Development
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/bluerobotics/navigator-lib?tab=readme-ov-file" class="hover:underline hover:text-quaternary">
-                        Navigator Lib
-                    </a>
-                </li>
-<!--
-                <li>
-                    <a href="#" class="hover:underline hover:text-quaternary">
-                        Sensors
-                    </a>
-                </li>
--->
-                <li>
-                    <a href="https://mavlink.io/en/messages/common.html" class="hover:underline hover:text-quaternary">
-                        MAVLink Messages
-                    </a>
-                </li>
-<!--
-                <li>
-                    <a href="#" class="hover:underline hover:text-quaternary">
-                        Lua Scripting Guide
-                    </a>
-                </li>
--->
-            </ul>
-            <ul class="mb-4 space-y-2 md:mb-0">
-                <li>
-                    <span class="text-quaternary text-lg font-bold">
-                        Vehicles
-                    </span>
-                </li>
-                <li>
-                    <a href="https://bluerobotics.com/guide-tag/bluerov2/" class="hover:underline hover:text-quaternary">
-                        BlueROV
-                    </a>
-                </li>
-                <li>
-                    <a href="https://bluerobotics.com/guide-tag/blueboat/" class="hover:underline hover:text-quaternary">
-                        BlueBoat
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Community Megamenu content -->
-    <!-- -->
-    <div id="mega-menu-community-content"
-         class="hidden relative z-50 w-full megamenu">
-        <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-white dark:text-gray-400 md:grid-cols-4 md:px-6 z-50">
-            <ul class="hidden mb-4 space-y-2 md:mb-0 md:block" aria-labelledby="mega-menu-full-image-button">
-            </ul>
-            <ul class="mb-4 space-y-2 md:mb-0">
-            </ul>
-            <ul class="mb-4 space-y-2 md:mb-0">
-                <li>
-                    <span class="text-quaternary text-lg font-bold">
-                        Blue Robotics
-                    </span>
-                </li>
-                <li>
-                    <a href="https://discuss.bluerobotics.com/" class="hover:underline hover:text-quaternary">
-                        Discussion Forum
-                    </a>
-                </li>
-                <li>
-                    <a href="https://discord.gg/hvcRQRpen4" class="hover:underline hover:text-quaternary">
-                        Chat (Discord)
-                    </a>
-                </li>
-                <li>
-                    <a href="https://bluerobotics.com/technical-support/" class="hover:underline hover:text-quaternary">
-                        Technical Support Form
-                    </a>
-                </li>
-                <li>
-                    <a href="https://bluerobotics.com/events/" class="hover:underline hover:text-quaternary">
-                        Events/Conferences
-                    </a>
-                </li>
-            </ul>
-            <ul class="mb-4 space-y-2 md:mb-0">
-                <li>
-                    <span class="text-quaternary text-lg font-bold">
-                        External
-                    </span>
-                </li>
-                <li>
-                    <a href="https://discuss.ardupilot.org/" class="hover:underline hover:text-quaternary">
-                        ArduPilot Forum
-                    </a>
-                </li>
-                <li>
-                    <a href="https://ardupilot.org/discord" class="hover:underline hover:text-quaternary">
-                        ArduPilot Developer Chat
-                    </a>
-                </li>
-                <li>
-                    <a href="https://discuss.px4.io/" class="hover:underline hover:text-quaternary">
-                        PX4 Forum
-                    </a>
-                </li>
-                 <li>
-                    <a href="https://docs.qgroundcontrol.com/master/en/qgc-user-guide/index.html" class="hover:underline hover:text-quaternary">
-                        QGroundControl
-                    </a>
-                </li>
-           </ul>
-        </div>
-    </div>
+    {% endfor %}{% endif %}
 </nav>

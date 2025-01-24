@@ -24,6 +24,7 @@ include_content = true
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
 
+# ---------------------- NAVBAR ---------------------- #
 [extra.logo]
 # The path to the navbar logo image
 image_source = "https://blueos.cloud/assets/img/blueos-logo-white.png"
@@ -32,8 +33,71 @@ image_source = "https://blueos.cloud/assets/img/blueos-logo-white.png"
 
 # If you enable this option, a select widget will be available to switch between different versions.
 # You need to provide a url for a json file, an example can be found in the bluetheme docs.
-# version_choices = "/docs/data.json"
+#version_choices = "/docs/data.json"
 
+# megamenu links
+[[extra.navbar]]
+name = "About"
+columns = [
+  {heading = "General", links = [
+    {name = "About Blue Robotics", href="https://bluerobotics.com/about/"},
+#    {name = "Open Source License", href="#"},
+#    {name = "Sponsorship", href="#"},
+  ]},
+  {heading = "Applications", links = [
+    {name = "BlueOS", href="https://blueos.cloud/docs/latest"},
+    {name = "Cockpit", href="https://blueos.cloud/cockpit/docs/latest/"},
+    {name = "Ping Viewer", href="https://docs.bluerobotics.com/ping-viewer"},
+  ]},
+]
+
+[[extra.navbar]]
+name = "Docs"
+columns = [
+  {heading = "Autopilots", links = [
+    {name = "ArduCopter", href="https://ardupilot.org/copter/"},
+    {name = "ArduPlane", href="https://ardupilot.org/plane/"},
+    {name = "ArduRover", href="https://ardupilot.org/rover/"},
+    {name = "ArduSub", href="https://www.ardusub.com/"},
+    {name = "PX4", href="https://docs.px4.io/main/en/"},
+  ]},
+  {heading = "Extensions", links = [
+    {name = "Cockpit", href="https://blueos.cloud/cockpit/docs"},
+    {name = "Ping Viewer", href="https://docs.bluerobotics.com/ping-viewer/"},
+    {name = "Node-Red", href="https://github.com/BlueOS-community/blueos-node-red"},
+  ]},
+  {heading = "Developers", links = [
+    {name = "BlueOS Core Development", href="https://blueos.cloud/docs/latest/development/core/"},
+    {name = "BlueOS Extension Development", href="https://blueos.cloud/docs/latest/development/extensions/"},
+    {name = "Navigator Lib", href="https://github.com/bluerobotics/navigator-lib?tab=readme-ov-file"},
+#    {name = "Sensors", href="#"},
+    {name = "MAVLink Messages", href="https://mavlink.io/en/messages/common.html"},
+#    {name = "Lua Scripting Guide", href="#"},
+  ]},
+  {heading = "Vehicles", links = [
+    {name = "BlueROV2", href="https://bluerobotics.com/guide-tag/bluerov2/"},
+    {name = "BlueBoat", href="https://bluerobotics.com/guide-tag/blueboat/"},
+  ]},
+]
+
+[[extra.navbar]]
+name = "Community"
+columns = [
+  {heading = "Blue Robotics", links = [
+    {name = "Discussion Forum", href="https://discuss.bluerobotics.com/"},
+    {name = "Chat (Discord)", href="https://discord.gg/hvcRQRpen4"},
+    {name = "Technical Support Form", href="https://bluerobotics.com/technical-support/"},
+    {name = "Events/Conferences", href="https://bluerobotics.com/events/"},
+  ]},
+  {heading = "External", links = [
+    {name = "ArduPilot Forum", href="https://discuss.ardupilot.org/"},
+    {name = "ArduPilot Developer Chat", href="https://ardupilot.org/discord"},
+    {name = "PX4 Forum", href="https://discuss.px4.io/"},
+    {name = "QGroundControl", href="https://docs.qgroundcontrol.com/master/en/qgc-user-guide/index.html"},
+  ]},
+]
+
+# ---------------------- FOOTER ---------------------- #
 [extra.sponsor]
 name = "Blue Robotics"
 url = "https://bluerobotics.com"
