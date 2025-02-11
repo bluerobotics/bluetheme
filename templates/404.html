@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="bluetheme">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="refresh" content="3; URL={{ config.base_url }}" />
+    <title>404 Page not found</title>
+    <link href="{{ config.base_url | safe }}/output.css" rel="stylesheet">
+    {% if config.extra.palette %}
+    <style>
+    /* override default theme colours */
+    :root {
+        {% for name, colour in config.extra.palette
+         %}--twc-{{ name }}: {{ colour }};{%
+         endfor %}
+    }
+    </style>
+    {% endif %}
+</head>
+
+<body class="antialiased h-[calc(100vh-65px)]">
+    <header>
+        {% include "navbar.html" %}
+    </header>
+
+    <div class="2xl:container 2xl:mx-auto mt-14">
+        <div class="flex">
+            <div class="w-80 flex-none p-6 border-gray-200 h-[calc(100vh-65px)] overflow-auto __overflow-y-hidden hover:overflow-y-scroll">
+                {% block sidebar %}{% endblock %}
+            </div>
+            <div class="markdown grow px-12 border-s-2 h-[calc(100vh-65px)] overflow-auto">
+                <h1>Oops!</h1>
+                <span class="font-normal text-xl py-2">
+                    That page doesn't exist for this docs version, or maybe at all!
+                </span>
+
+                <p>You should be redirected to <a href="{{ config.base_url }}">the version homepage</a> shortly.</p>
+
+                {% include "attribution.html" %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
