@@ -26,9 +26,9 @@ include_content = true
 
 # ---------------------- NAVBAR ---------------------- #
 [extra.logo]
-# The path to the navbar logo image
-image_source = "https://blueos.cloud/assets/img/blueos-logo-white.png"
-# The place where the logo in the navbar should link to, e.g.
+# The path to the navbar logo image - defaults to a logo.png file in the "static" folder
+#image_source = "https://blueos.cloud/assets/img/blueos-logo-white.png"
+# The place where the logo in the navbar should link to - defaults to config.base_url
 #redirect_to = "/docs/"
 
 # If you enable this option, a select widget will be available to switch between different versions.
