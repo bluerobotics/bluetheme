@@ -1,18 +1,10 @@
-
-<!-- define variable to where the logo should redirect to -->
-{% if config.extra.logo.redirect_to %}
-    {% set logo_redirect_to = config.extra.logo.redirect_to %}
-{% else %}
-    {% set logo_redirect_to = config.base_url | safe %}
-{% endif %}
-
 <nav class=" border-b-0 border-gray-200 top-0 start-0 z-40 fixed w-full">
     <div class="w-full bg-primary px-4 py-1.5">
         <div class="container mx-auto ">
             <div class="flex flex-wrap justify-between items-center">
                 <div class="flex justify-start items-center">
-                    <a href="{{ logo_redirect_to }}" class="flex mr-4">
-                        <img src="{{ config.extra.logo.image_source }}"
+                    <a href="{{ config.extra.logo.redirect_to | default(value=config.base_url | safe) }}" class="flex mr-4">
+                        <img src="{{ config.extra.logo.image_source | default(value=config.base_url ~ "/logo.png") }}"
                              class="mr-3 h-10"
                              alt="Software Logo"/>
                         <span class="self-center text-2xl font-semibold whitespace-nowrap text-white"></span>
