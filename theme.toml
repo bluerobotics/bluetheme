@@ -58,7 +58,7 @@ columns = [
     {name = "ArduCopter", href="https://ardupilot.org/copter/"},
     {name = "ArduPlane", href="https://ardupilot.org/plane/"},
     {name = "ArduRover", href="https://ardupilot.org/rover/"},
-    {name = "ArduSub", href="https://www.ardusub.com/"},
+    {name = "ArduSub", href="https://www.ardupilot.org/sub/"},
     {name = "PX4", href="https://docs.px4.io/main/en/"},
   ]},
   {heading = "Extensions", links = [
