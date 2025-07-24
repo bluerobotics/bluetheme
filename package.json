@@ -2,7 +2,7 @@
   "dependencies": {
     "flowbite": "^2.3.0",
     "flowbite-typography": "^1.0.4",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "^3.4.17",
     "tw-colors": "^3.3.2"
   }
 }
