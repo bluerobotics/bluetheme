@@ -21,7 +21,7 @@
         let base_index = split_path.indexOf(redirect_parts[0])
         split_path.splice(base_index, redirect_parts.length - offset, ...redirect_parts)
 
-        window.location = split_path.join("/")
+        window.location = split_path.join("/") + window.location.hash
     }
 
     function fetch_version_list(data){
