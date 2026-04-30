@@ -2804,6 +2804,26 @@ input:checked + .toggle-bg {
   --twc-quaternary: 199.39999999999998 69.1% 48.2%;
 }
 
+/* Required zola CSS */
+
+.giallo-l {
+  display: inline-block;
+  min-height: 1lh;
+  width: 100%;
+}
+
+.giallo-ln {
+  display: inline-block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  margin-right: 0.4em;
+  padding: 0.4em;
+  min-width: 3ch;
+  text-align: right;
+  opacity: 0.8;
+}
+
 @media (min-width: 1536px) {
   .\32xl\:container {
     width: 100%;
